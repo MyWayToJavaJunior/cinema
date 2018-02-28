@@ -6,6 +6,11 @@ namespace Composer\Autoload;
 
 class ComposerStaticInit5bc295b62f01b6f29c4b287b0c98e2cd
 {
+    public static $files = array (
+        '5d5ac8c8c3ad5de23aef29c107a537ad' => __DIR__ . '/../..' . '/src/App/Renderer.php',
+        '6da42c26f94942f4f587a9506cf06921' => __DIR__ . '/../..' . '/src/App/Template.php',
+    );
+
     public static $fallbackDirsPsr0 = array (
         0 => __DIR__ . '/../..' . '/src',
     );
