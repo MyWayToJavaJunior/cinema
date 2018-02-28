@@ -9,7 +9,11 @@
     ],
 
     "autoload": {
-        "psr-0": { "": "src/" }
+        "psr-0": { "": "src/" },
+        "files": [
+            "src/App/Renderer.php",
+            "src/App/Template.php"
+        ]
     },
 
     "require": {}
