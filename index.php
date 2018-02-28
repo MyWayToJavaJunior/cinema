@@ -4,14 +4,12 @@ namespace App;
 
 require_once 'vendor/autoload.php';
 
+use function App\Renderer\render;
+
 $app = new Application();
 
 $app->setRoute('/cinema/', function () {
-    return '<h1>this is home</h1>';
-});
-
-$app->setRoute('/cinema/buy', function () {
-    return '<h1>this is buy</h1>';
+    return render('index', ['msg' => "Hello, World!"]);
 });
 
 $app->run();
