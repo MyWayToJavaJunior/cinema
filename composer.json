@@ -1,0 +1,20 @@
+{
+    "name": "cinema/bilets",
+    "description": "Бронирование билетов в кино",
+    "authors": [
+        {
+            "name": "melodyn",
+            "email": "samelodyn@gmail.com"
+        }
+    ],
+
+    "autoload": {
+        "psr-0": { "": "src/" },
+        "files": [
+            "src/App/Renderer.php",
+            "src/App/Template.php"
+        ]
+    },
+
+    "require": {}
+}
