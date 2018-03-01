@@ -1,6 +1,6 @@
 <?php
 
-namespace Databases;
+namespace App\Databases;
 
 class Database
 {
@@ -18,9 +18,16 @@ class Database
 
     public function __construct()
     {
-        $dsn = "mysql:host=$this->host;dbname=$this->db;charset=$this->charset";
+        $dsn = "mysql:host=$this->host;name=$this->db;charset=$this->charset";
         $this->pdo = new \PDO($dsn, $this->user, $this->pass, $this->options);
-        return $this->pdo;
+    }
+
+    public function getFilms($selector = '*', $where = '')
+    {
+        $pdo = $this->pdo;
+        $stmt = $pdo->query("SELECT $selector FROM films $where");
+        $list = $stmt->fetchAll();
+        return $list;
     }
 }
 

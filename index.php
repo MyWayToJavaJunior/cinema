@@ -10,9 +10,10 @@ date_default_timezone_set('Europe/Moscow');
 
 $app = new Application();
 
-$app->setRoute('/cinema/', function () use ($connectDB) {
+$app->setRoute('/cinema/', function () {
+    $db = new \App\Databases\Database();
     return render('index', [
-        'listOfFilms' => 'list'
+        'listOfFilms' => $db->getFilms()
     ]);
 });
 
