@@ -5,6 +5,10 @@ body {
     color: hsl(0, 0%, 20%);
 }
 
+input::placeholder{
+    font-size: 14px;
+}
+
 input[type="time"] {
     font-size: 14px;
 }
@@ -40,4 +44,8 @@ section {
     text-align: center;
     text-decoration: none;
     font-size: 24px;
+}
+
+.add_films > label > input[type="number"] {
+    width: 64px;
 }
