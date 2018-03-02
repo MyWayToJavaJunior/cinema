@@ -1,0 +1,20 @@
+<?php require_once 'body/header.phtml'; ?>
+
+<form class="add_films" name="films" method="post">
+    <input type="hidden" name="_method" value="PUT">
+    <h3>Добавить фильм:</h3>
+    <label>название: 
+        <input type="text" name="name" maxlength="50" minlength=3 placeholder="Порекомендуй что-нибудь">
+    </label>
+    <label>длительность, мин.: 
+        <input type="number" name="length" min="60" max="240" step="20" value="60" >
+    </label>
+    <label>цена, руб.: 
+        <input type="number" name="price" min="100" max="200" step="10" value="100" >
+    </label>
+    <input type="submit" value="В путь">
+</form>
+
+<?= isset($response) ? "<h4 style='color: green'>Фильм добавлен!</h4>" : ""; ?>
+
+<?php require_once 'body/footer.phtml'; ?>

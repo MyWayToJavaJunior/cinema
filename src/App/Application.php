@@ -6,21 +6,40 @@ class Application
 {
     private $router = [];
 
-    public function setRoute($path, $handler)
+    public function get($path, $handler)
     {
-        $this->router[] = [$path, $handler];
+        $this->append('GET', $path, $handler);
     }
 
+    public function post($path, $handler)
+    {
+        $this->append('POST', $path, $handler);
+    }
+
+    public function put($path, $handler)
+    {
+        $this->append('PUT', $path, $handler);
+    }
+    
     public function run()
     {
-        $requestUri = $_SERVER['REQUEST_URI'];
+        $requestPath = $_SERVER['REQUEST_URI'];
         $requestMethod = $_SERVER['REQUEST_METHOD'];
         foreach ($this->router as $response) {
-            list($responseUri, $handler) = $response;
-            if ($responseUri === $requestUri) {
+            list($handlerMethod, $handlerPath, $handler) = $response;
+            $isRequestToDB = ($_SERVER['REQUEST_METHOD'] === 'POST' && array_key_exists('_method', $_POST));
+            $requestMethod = $isRequestToDB ? $_POST['_method'] : $requestMethod;
+            if ($handlerMethod === $requestMethod && $handlerPath === $requestPath) {
                 echo $handler();
                 return;
             }
         }
     }
+
+    public function append($method, $path, $handler)
+    {
+        $this->router[] = [$method, $path, $handler];
+    }
+
+    
 }
