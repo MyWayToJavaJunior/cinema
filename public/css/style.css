@@ -1,0 +1,43 @@
+body {
+    font-family: Calibri, Roboto, 'Open Sans', 'Segoe UI', Geneva, Verdana, Arial, Tahoma, sans-serif;
+    font-size: 18px;
+    background: hsl(0, 0%, 98%);
+    color: hsl(0, 0%, 20%);
+}
+
+input[type="time"] {
+    font-size: 14px;
+}
+
+content {
+    display: grid;
+    grid-template-areas: "buy admin"
+                         ". current_time"
+                         "section section";
+    width: 960px;
+    margin: 64px auto;
+    /*background: rgba(0, 0, 0, 0.1);*/
+}
+.buy {
+    grid-area: buy;
+}
+.admin {
+    grid-area: admin;
+}
+.current_time {
+    grid-area: current_time;
+    margin-top: 32px;
+    text-align: right;
+}
+section {
+    grid-area: section;
+    margin: 8px 0 4px 0;
+}
+
+/**/
+
+.header {
+    text-align: center;
+    text-decoration: none;
+    font-size: 24px;
+}

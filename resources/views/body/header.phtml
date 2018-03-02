@@ -3,5 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <title>Бронирование билетов</title>
+    <link rel="stylesheet" type="text/css" href="/public/css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="/public/css/style.css">
 </head>
 <body>
+
+<content>
+    <a href="/cinema/" class="header buy">Купить</a>
+    <a href="admin" class="header admin">Администрирование</a>
+    <div class="current_time">
+        <label for="time">Текущее время: </label>
+        <input id="time" type="time" value="<?= date("H:i", time()); ?>">
+    </div>
+    <section>

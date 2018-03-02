@@ -12,9 +12,16 @@ $app = new Application();
 
 $app->setRoute('/cinema/', function () {
     $db = new \App\Databases\Database();
-    return render('index', [
+    return render('index'/*, [
         'listOfFilms' => $db->select('*', 'films')
-    ]);
+    ]*/);
+});
+
+$app->setRoute('/cinema/admin', function () {
+    $db = new \App\Databases\Database();
+    return render('admin'/*, [
+        'listOfFilms' => $db->select('*', 'seances')
+    ]*/);
 });
 
 $app->run();
