@@ -2,7 +2,7 @@
 
 namespace App;
 
-require_once 'vendor/autoload.php';
+require_once '../vendor/autoload.php';
 
 use function App\Renderer\render;
 
@@ -18,3 +18,4 @@ $app->setRoute('/cinema/', function () {
 });
 
 $app->run();
+
